@@ -1,0 +1,35 @@
+tomar en cuenta que se agrego una abse de datos en PostgreSQL y esta esta en una maquina virtual para ver la configuracion validar el archivo config.ts CREATE DATABASE tienda;
+
+-- Crear la tabla productos
+CREATE TABLE
+    productos (
+        id SERIAL PRIMARY KEY,
+        nombre VARCHAR(100) NOT NULL,
+        descripcion TEXT,
+        precio DECIMAL(10, 2) NOT NULL,
+        stock INT NOT NULL DEFAULT 0,
+        fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+-- Insertar datos de prueba (opcional)
+INSERT INTO
+    productos (nombre, descripcion, precio, stock)
+VALUES
+    (
+        'Laptop',
+        'Portátil con 16GB RAM y 512GB SSD',
+        1250.00,
+        10
+    ),
+    (
+        'Teclado mecánico',
+        'RGB con switches rojos',
+        85.99,
+        30
+    ),
+    (
+        'Mouse gamer',
+        'Mouse óptico de alta precisión',
+        45.50,
+        20
+    );
